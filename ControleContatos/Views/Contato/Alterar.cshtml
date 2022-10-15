@@ -1,0 +1,45 @@
+﻿@model ContatoModel
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-secondary" role="button" asp-controller="Contato" asp-action="Index" btn-secondary">Voltar</a>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Alterar Contato</h1>
+    <form asp-controller="Contato" asp-action="Alterar" method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">CPF</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text">>></span>
+                            <input type="text" asp-for="nome" aria-label="Nome" class="form-control" placeholder="insira seu nome completo">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text" id="addon-wrapping">@@</span>
+                            <input type="text" asp-for="email" aria-label="E-MAIL" class="form-control" placeholder="insira seu e-mail">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" id="cpf" asp-for="cpf" aria-label="CPF" class="form-control" title="O CPF não pode ser editado" readonly>
+                            <button type="submit" class="btn btn-outline-warning" id="button-addon2">Alterar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

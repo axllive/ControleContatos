@@ -1,0 +1,51 @@
+﻿@model ContatoModel
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-secondary" role="button" asp-controller="Contato" asp-action="Index" btn-secondary">Voltar</a>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Excluir Contato</h1>
+</div>
+
+<div class="text-center">
+    <form asp-controller="Contato" asp-action="Excluir" method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">CPF</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text">>></span>
+                            <input type="text" asp-for="nome" aria-label="Nome" class="form-control" readonly>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text" id="addon-wrapping">@@</span>
+                            <input asp-for="email" aria-label="E-MAIL" class="form-control" readonly>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <input id="cpf" asp-for="cpf" aria-label="CPF" class="form-control" readonly>
+                            <button type="submit" class="btn btn-outline-danger" id="button-addon2"
+                                    data-confirm="Deseja mesmo excluir @Model.nome.ToString() ?" >
+                                Excluir
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@model ContatoModel
+@{
+    ViewData["Title"] = "Adicionar Contato";
+}
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-secondary" role="button" asp-controller="Contato" asp-action="Index" btn-secondary">Voltar</a>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Adicionar ao BD</h1>
+</div>
+
+<form asp-controller="Contato" asp-action="Adicionar" method="post">
+    <div class="input-group">
+        <span class="input-group-text">>></span>
+        <input type="text" asp-for="nome" aria-label="Nome" class="form-control" placeholder="insira seu nome completo">
+    </div>
+    <div class="input-group">
+        <span class="input-group-text" id="addon-wrapping">@@</span>
+        <input type="text" asp-for="email" aria-label="E-MAIL" class="form-control" placeholder="insira seu e-mail">
+    </div>
+    <div class="input-group">
+        <input type="text" id="cpf" asp-for="cpf" aria-label="CPF" class="form-control" placeholder="insira seu CPF" maxlength="14">
+        <button type="submit" class="btn btn-outline-success" id="button-addon2">Inserir</button>
+    </div>
+</form>
